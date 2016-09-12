@@ -7,6 +7,7 @@ public class Brain {
 
     Display display;
     Calculator calculator;
+    boolean onOff = true;
 
     public Brain(){
 
@@ -15,7 +16,7 @@ public class Brain {
 
     }
 
-    public void setMode(boolean b) {
+    public void setMode() {
 
         String userInput1 = display.getUserInputStr();
 
@@ -43,12 +44,12 @@ public class Brain {
         if (userInput1.equals("FEELINGS"))
             display.showBadResult(calculator.mentalBreakdown());
 
-        if (userInput1.equals("OFF"))
-            calculator.calculatorOff();
+        if (userInput1.equals("QUIT"))
+            this.onOff = false;
+            System.out.println("You may leave, scrub.");
 
-
-        else
-            display.showBadResult(calculator.notAFrickinFunction());
+        //else
+            //display.showBadResult(calculator.notAFrickinFunction());
     }
 
 

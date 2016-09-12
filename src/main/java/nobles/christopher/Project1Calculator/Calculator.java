@@ -5,10 +5,14 @@ package nobles.christopher.Project1Calculator;
  */
 public class Calculator {
 
-    int sum = 0;
-    int product = 1;
-    int subtract = 0;
-    int divide = 0;
+     int sum = 0;
+     int product = 1;
+     int subtract = 0;
+     int divide = 0;
+
+
+
+
     String nonsense = "Bob";
 
 
@@ -75,15 +79,6 @@ public class Calculator {
 
     }
 
-    public static boolean calculatorOff () {
-
-        //an attempt to turn the calculator off
-        //or;
-        //a monument to all my sins
-        return true;
-
-
-    }
 
 
 }

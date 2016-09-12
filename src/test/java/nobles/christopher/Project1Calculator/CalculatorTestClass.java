@@ -83,8 +83,8 @@ public class CalculatorTestClass {
 
     }
 
-    @Test
-    public void calculateSquareTEST() {
+    /*@Test
+        public void calculateSquareTEST() {
 
         double actualValue = calculatorTEST.calculateSquare(4);
         double expectedValue = 16;
@@ -97,5 +97,5 @@ public class CalculatorTestClass {
         double actualValue = calculatorTEST.calculateSquareUp(3, 3);
         double expectedValue = 9;
         assertEquals("The value should be 9" , actualValue, expectedValue, 0);
-    }
+    }*/
 }
