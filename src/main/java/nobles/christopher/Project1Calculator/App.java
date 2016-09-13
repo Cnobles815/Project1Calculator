@@ -6,16 +6,10 @@ package nobles.christopher.Project1Calculator;
  */
 public class App {
 
-    //static boolean onOff = true;
-    Display display;
-    Calculator calculator;
-
-
-
     public static void main(String[] args) {
         Brain start = new Brain();
         //This thing does not turn off. Weep.
-        while (start.onOff == true)
+        while (start.onOff)
             start.setMode();
             }
 

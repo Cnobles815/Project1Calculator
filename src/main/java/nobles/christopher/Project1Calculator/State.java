@@ -5,14 +5,56 @@ package nobles.christopher.Project1Calculator;
  */
 public class State {
 
-    Display display;
-    Calculator calculator;
-    Brain brain;
-    State state;
+    //Display display;
+    //Calculator calculator;
+    //Brain brain;
+    setState setting;
 
-    public State(){
+    private enum setState {HEXIDECIMAL, BINARY, OCTAL, DECIMAL}
 
-        this.display = new Display();
+        public State(){
+
+            setting = State.setState.DECIMAL;
+
+        }
+
+        public String conversion(double output) {
+
+            switch (setting) {
+                case HEXIDECIMAL:
+                    return Integer.toHexString((int) output);
+                //break;
+            }
+
+            switch (setting) {
+                case OCTAL:
+                    return Integer.toHexString((int) output);
+                //break;
+            }
+
+            switch (setting) {
+                case BINARY:
+                    return Integer.toHexString((int) output);
+                //break;
+            }
+
+            switch (setting) {
+                case DECIMAL:
+                    return Integer.toHexString((int) output);
+               // break;
+            }
+        return Integer.toHexString((int)output);
+        }
+
+
+
+
+
+
+
+
+
+     /*  this.display = new Display();
         this.calculator = new Calculator();
         this.brain = new Brain();
         this.state = new State();
@@ -29,7 +71,7 @@ public class State {
         return saved;
 
 
-    }
+    }*/
 
 
 }

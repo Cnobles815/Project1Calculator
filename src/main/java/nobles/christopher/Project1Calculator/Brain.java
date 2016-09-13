@@ -18,7 +18,8 @@ public class Brain {
 
     public void setMode() {
 
-        String userInput1 = display.getUserInputStr();
+        String userInput1 = display.getUserInputOperator();
+
 
         if (userInput1.equals("ADD"))
             display.showResult(calculator.calculateAdd(display.getUserInput1() , display.getUserInput2()));
@@ -33,20 +34,42 @@ public class Brain {
             display.showResult(calculator.calculateSubtract(display.getUserInput1() , display.getUserInput2()));
 
         if (userInput1.equals("ROOT"))
-            display.showDoubleResult(calculator.calculateSquareRoot(display.getUserInput1()));
+            display.showResult(calculator.calculateSquareRoot(display.getUserInput1()));
 
         if (userInput1.equals("SQUARE"))
-            display.showDoubleResult(calculator.calculateSquare(display.getUserInput1()));
+            display.showResult(calculator.calculateSquare(display.getUserInput1()));
+
+        if (userInput1.equals("RANDOM"))
+            display.showResult(calculator.calculateRandom());
 
         if (userInput1.equals("RAISEDTO"))
-            display.showDoubleResult(calculator.calculateSquareUp(display.getUserInput1() , display.getUserInput2()));
+            display.showResult(calculator.calculateSquareUp(display.getUserInput1() , display.getUserInput2()));
 
         if (userInput1.equals("FEELINGS"))
             display.showBadResult(calculator.mentalBreakdown());
 
-        if (userInput1.equals("QUIT"))
+        if (userInput1.equals("SINE"))
+            display.showResult(calculator.calculateSine(display.getUserInput1()));
+
+        if (userInput1.equals("COSINE"))
+            display.showResult(calculator.calculateCosine(display.getUserInput1()));
+
+        if (userInput1.equals("TANGENT"))
+            display.showResult(calculator.calculateTangent(display.getUserInput1()));
+
+        if (userInput1.equals("INVSINE"))
+            display.showResult(calculator.calculateInvSine(display.getUserInput1()));
+
+        if (userInput1.equals("INVCOSINE"))
+            display.showResult(calculator.calculateInvSine(display.getUserInput1()));
+
+        if (userInput1.equals("INVTANGENT"))
+            display.showResult(calculator.calculateInvTangent(display.getUserInput1()));
+
+        if (userInput1.equals("QUIT")) {
             this.onOff = false;
             System.out.println("You may leave, scrub.");
+        }
 
         //else
             //display.showBadResult(calculator.notAFrickinFunction());
