@@ -5,22 +5,26 @@ import java.util.Random;
 
 public class Display {
 
-    //Calculator calculator;
-
-
 
     //Prompt the user for input
     //Take user input
     //Display answer
-    State state = new State();
+    AnswerFormat answerFormat = new AnswerFormat();
+
+    public String setSetting() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Choose Setting");
+        return userInput.next();
+    }
 
     public int getUserInput1() {
         Scanner userInput = new Scanner(System.in);
         System.out.println("Enter integer.");
-        //System.out.println(state.setState());
+        //System.out.println(answerFormat.setOutput());
         return userInput.nextInt();
 
     }
+
 
     public int getUserInput2() {
         Scanner userInput = new Scanner(System.in);
@@ -32,7 +36,7 @@ public class Display {
     public String getUserInputOperator() {
         Scanner userInput = new Scanner(System.in);
         System.out.println("I bet you needed to calculate something. This app might do that.");
-        System.out.println("It might also return a statement reflecting the current mental state of the 'coder' who wrote this." +
+        System.out.println("It might also return a statement reflecting the current mental answerFormat of the 'coder' who wrote this." +
                 "\nThat is a feature. Not a bug.");
         System.out.println("But you're here to roast my code. So go ahead. Flip that coin.");
         System.out.println("\n                      [[Choose Mode]]" +
@@ -49,24 +53,37 @@ public class Display {
 
     }
 
+    public String getMode() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Choose your output mode." +
+                "\n DECIMAL, HEXIDECIMAL, OCTAL, BINARY");
+        String modePick = new String (userInput.next());
+        String cased = modePick.toUpperCase();
+        return cased;
+
+    }
 
 
 
+    public  int showResultInt(int output) {
 
-    public void showResult (int output) {
-        System.out.println("Your answer is: [[" + state.conversion(output) + "]] Which is \"probably\" correct. (JK I WROTE TESTS THIS STUFF IS BULLETPROOF)\n");
+        System.out.println("Your answer is: [[" + answerFormat.conversion(output) + "]] Which is \"probably\" correct. (JK I WROTE TESTS THIS STUFF IS BULLETPROOF)\n");
+
+        return output;
 
     }
 
     public void showBadResult (String output) {
+
         System.out.println("\n" +output+ "\n :) \n");
     }
 
-    public void showResult(double output){
-        System.out.println("Your answer is: [[" + state.conversion(output) + "]] TDD Told me so.\n");
+    public double showResultDouble(double output){
+        System.out.println("Your answer is: [[" + answerFormat.conversion(output) + "]] TDD Told me so.\n");
+        return output;
     }
 
-    public void showResult(Random output){
+    public void showResultRandom(Random output){
         System.out.println("Pointless Random Value: [[" + output + "]] I didn't test this. That's why it doesn't work.\n");
     }
 

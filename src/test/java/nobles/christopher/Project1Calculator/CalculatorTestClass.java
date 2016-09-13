@@ -8,6 +8,86 @@ import static org.junit.Assert.assertEquals;
  * Created by christophernobles on 9/11/16.
  */
 public class CalculatorTestClass {
+   /* @Test
+    public void calculateAdd() throws Exception {
+
+
+    }
+
+    @Test
+    public void calculateMultiply() throws Exception {
+
+    }
+
+    @Test
+    public void calculateSubtract() throws Exception {
+
+    }
+
+    @Test
+    public void calculateDivide() throws Exception {
+
+    }
+
+    @Test
+    public void notAFrickinFunction() throws Exception {
+
+    }
+
+    @Test
+    public void calculateSquareRoot() throws Exception {
+
+    }
+
+    @Test
+    public void mentalBreakdown() throws Exception {
+
+    }
+
+    @Test
+    public void calculateSquare() throws Exception {
+
+    }
+
+    @Test
+    public void calculateSquareUp() throws Exception {
+
+    }
+
+    @Test
+    public void calculateRandom() throws Exception {
+
+    }
+
+    @Test
+    public void calculateSine() throws Exception {
+
+    }
+
+    @Test
+    public void calculateCosine() throws Exception {
+
+    }
+
+    @Test
+    public void calculateTangent() throws Exception {
+
+    }
+
+    @Test
+    public void calculateInvSine() throws Exception {
+
+    }
+
+    @Test
+    public void calculateInvCoSine() throws Exception {
+
+    }
+
+    @Test
+    public void calculateInvTangent() throws Exception {
+
+    }*/
     //Learned late that I could have one Calculator for the whole thing.
     //Commented out Calculators are relics.
     //So no one thinks I'm a better coder than I am.
@@ -83,7 +163,7 @@ public class CalculatorTestClass {
 
     }
 
-    /*@Test
+    @Test
         public void calculateSquareTEST() {
 
         double actualValue = calculatorTEST.calculateSquare(4);
@@ -97,5 +177,11 @@ public class CalculatorTestClass {
         double actualValue = calculatorTEST.calculateSquareUp(3, 3);
         double expectedValue = 9;
         assertEquals("The value should be 9" , actualValue, expectedValue, 0);
-    }*/
+    }
+
+    @Test
+    public void calculateSineTEST () {
+
+
+    }
 }

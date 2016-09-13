@@ -116,7 +116,7 @@ public class Calculator {
         return invSined;
     }
 
-    public double calculateInvCoSined (int userNum1) {
+    public double calculateInvCoSine (int userNum1) {
 
         double invCoSined = Math.acos(userNum1);
 

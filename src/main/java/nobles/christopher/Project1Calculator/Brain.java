@@ -7,6 +7,7 @@ public class Brain {
 
     Display display;
     Calculator calculator;
+    AnswerFormat modeset;
     boolean onOff = true;
 
     public Brain(){
@@ -19,61 +20,318 @@ public class Brain {
     public void setMode() {
 
         String userInput1 = display.getUserInputOperator();
+        String userMode = display.getMode();
 
 
-        if (userInput1.equals("ADD"))
-            display.showResult(calculator.calculateAdd(display.getUserInput1() , display.getUserInput2()));
+        if (userInput1.equals("ADD")) {
+            //System.out.println(display.getUserInput1() + "+");
+            display.showResultInt(calculator.calculateAdd(display.getUserInput1(), display.getUserInput2()));
+            display.getMode();
+            if (userMode.equals("OCTAL"))
+                modeset.setSettingOct();
 
-        if (userInput1.equals("MULTIPLY"))
-            display.showResult(calculator.calculateMultiply(display.getUserInput1() , display.getUserInput2()));
 
-        if (userInput1.equals("DIVIDE"))
-            display.showResult(calculator.calculateDivide(display.getUserInput1() , display.getUserInput2()));
+            if (userMode.equals("HEXIDECIMAL"))
+                modeset.setSettingHex();
 
-        if (userInput1.equals("SUBTRACT"))
-            display.showResult(calculator.calculateSubtract(display.getUserInput1() , display.getUserInput2()));
 
-        if (userInput1.equals("ROOT"))
-            display.showResult(calculator.calculateSquareRoot(display.getUserInput1()));
+            if (userMode.equals("BINARY"))
+                modeset.setSettingBin();
 
-        if (userInput1.equals("SQUARE"))
-            display.showResult(calculator.calculateSquare(display.getUserInput1()));
 
-        if (userInput1.equals("RANDOM"))
-            display.showResult(calculator.calculateRandom());
+            if (userMode.equals("DECIMAL"))
+                modeset.setSettingDec();
 
-        if (userInput1.equals("RAISEDTO"))
-            display.showResult(calculator.calculateSquareUp(display.getUserInput1() , display.getUserInput2()));
+        }
 
-        if (userInput1.equals("FEELINGS"))
+        if (userInput1.equals("MULTIPLY")) {
+            display.showResultInt(calculator.calculateMultiply(display.getUserInput1() , display.getUserInput2()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+
+
+        if (userInput1.equals("DIVIDE")) {
+            display.showResultInt(calculator.calculateDivide(display.getUserInput1() , display.getUserInput2()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("SUBTRACT")) {
+            display.showResultInt(calculator.calculateSubtract(display.getUserInput1() , display.getUserInput2()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("ROOT")) {
+            display.showResultDouble(calculator.calculateSquareRoot(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+        if (userInput1.equals("SQUARE")) {
+            display.showResultDouble(calculator.calculateSquare(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+        if (userInput1.equals("RANDOM")) {
+            display.showResultRandom(calculator.calculateRandom());
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+        if (userInput1.equals("RAISEDTO")) {
+            display.showResultDouble(calculator.calculateSquareUp(display.getUserInput1() , display.getUserInput2()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("FEELINGS")) {
             display.showBadResult(calculator.mentalBreakdown());
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
 
-        if (userInput1.equals("SINE"))
-            display.showResult(calculator.calculateSine(display.getUserInput1()));
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
 
-        if (userInput1.equals("COSINE"))
-            display.showResult(calculator.calculateCosine(display.getUserInput1()));
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
 
-        if (userInput1.equals("TANGENT"))
-            display.showResult(calculator.calculateTangent(display.getUserInput1()));
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
 
-        if (userInput1.equals("INVSINE"))
-            display.showResult(calculator.calculateInvSine(display.getUserInput1()));
+        if (userInput1.equals("SINE")) {
+            display.showResultDouble(calculator.calculateSine(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
 
-        if (userInput1.equals("INVCOSINE"))
-            display.showResult(calculator.calculateInvSine(display.getUserInput1()));
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
 
-        if (userInput1.equals("INVTANGENT"))
-            display.showResult(calculator.calculateInvTangent(display.getUserInput1()));
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("COSINE")) {
+            display.showResultDouble(calculator.calculateCosine(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("TANGENT")) {
+            display.showResultDouble(calculator.calculateTangent(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("INVSINE")) {
+            display.showResultDouble(calculator.calculateInvSine(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("INVCOSINE")) {
+            display.showResultDouble(calculator.calculateInvCoSine(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
+
+        if (userInput1.equals("INVTANGENT")) {
+            display.showResultDouble(calculator.calculateInvTangent(display.getUserInput1()));
+            display.getMode();
+            if (userMode.equals("OCTAL")) {
+                modeset.setSettingOct();
+            }
+
+            if (userMode.equals("HEXIDECIMAL")) {
+                modeset.setSettingHex();
+            }
+
+            if (userMode.equals("BINARY")) {
+                modeset.setSettingBin();
+            }
+
+            if (userMode.equals("DECIMAL")) {
+                modeset.setSettingDec();
+            }
+        }
 
         if (userInput1.equals("QUIT")) {
             this.onOff = false;
             System.out.println("You may leave, scrub.");
         }
 
+
+    }
         //else
             //display.showBadResult(calculator.notAFrickinFunction());
-    }
-
-
 }
+
+
