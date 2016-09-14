@@ -71,7 +71,7 @@ public class Display {
 
     public  int showResultInt(int output) {
 
-        System.out.println("Your answer is: [[" + answerFormat.conversion(output) + "]] Which is \"probably\" correct. (JK I WROTE TESTS THIS STUFF IS BULLETPROOF)\n");
+        System.out.println("Your answer is: [[" + (output) + "]] Which is \"probably\" correct. (JK I WROTE TESTS THIS STUFF IS BULLETPROOF)\n");
 
         return output;
 
@@ -83,7 +83,7 @@ public class Display {
     }
 
     public double showResultDouble(double output){
-        System.out.println("Your answer is: [[" + answerFormat.conversion(output) + "]] TDD Told me so.\n");
+        System.out.println("Your answer is: [[" + (output) + "]] TDD Told me so.\n");
         return output;
     }
 

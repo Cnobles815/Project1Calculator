@@ -54,10 +54,10 @@ public class Brain {
                 state.setStateValue(calculator.calculateMultiply(state.getStateValue(), display.getUserInput()));
                 break;
             case 'I':
-                state.setStateValue(calculator.calculateCosine(state.getStateValue()));
+                state.setStateValue(calculator.calculateCosine(state.getStateValue() , display.getUserInput()));
                 break;
             case 'H':
-                state.setStateValue(calculator.calculateSine(state.getStateValue()));
+                state.setStateValue(calculator.calculateSine(state.getStateValue() , display.getUserInput()));
                 break;
             case 'F':
                 state.setStateValue(calculator.calculateSquare(state.getStateValue()));
@@ -69,7 +69,7 @@ public class Brain {
                 state.setStateValue(calculator.calculateSquareUp(state.getStateValue() , display.getUserInput()));
                 break;
             case 'L' :
-                state.setStateValue(calculator.calculateInvCoSine(state.getStateValue()));
+                state.setStateValue(calculator.calculateInvCoSine(state.getStateValue() , display.getUserInput()));
                 break;
             case 'J' :
                 state.setStateValue(calculator.calculateTangent(state.getStateValue()));
@@ -78,7 +78,7 @@ public class Brain {
                 state.setStateValue(calculator.calculateInvTangent(state.getStateValue()));
                 break;
             case 'K':
-                state.setStateValue(calculator.calculateInvSine(state.getStateValue()));
+                state.setStateValue(calculator.calculateInvSine(state.getStateValue() , display.getUserInput()));
                 break;
             default:
                 System.out.println("Invalid.");

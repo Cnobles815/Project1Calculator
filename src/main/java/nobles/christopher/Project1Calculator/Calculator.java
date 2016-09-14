@@ -68,12 +68,12 @@ public class Calculator {
 
     }
 
-    public double calculateSine (double userNum1) {
+    public double calculateSine (double userNum1, double userNum2) {
 
       return Math.sin(userNum1);
     }
 
-    public double calculateCosine (double userNum1) {
+    public double calculateCosine (double userNum1, double userNum2) {
 
 
       return Math.cos(userNum1);
@@ -84,12 +84,12 @@ public class Calculator {
       return Math.tan(userNum1);
     }
 
-    public double calculateInvSine (double userNum1) {
+    public double calculateInvSine (double userNum1, double userNum2) {
 
       return Math.asin(userNum1);
     }
 
-    public double calculateInvCoSine (double userNum1) {
+    public double calculateInvCoSine (double userNum1, double userNum2) {
 
        return Math.acos(userNum1);
     }

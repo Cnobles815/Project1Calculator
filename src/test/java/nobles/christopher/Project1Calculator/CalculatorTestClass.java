@@ -182,6 +182,14 @@ public class CalculatorTestClass {
     @Test
     public void calculateSineTEST () {
 
-
+        double acutalValue = calculatorTEST.calculateSine(99 , 8);
+        double expectedValue = 97.946466416;
     }
+
+//    @Test
+//    public void calculateCosineTEST () {
+//
+//        double actualValue = calculateCosineTEST.calculateSine(99, 8);
+//        double expectedValue = -14.40450334;
+//    }
 }
