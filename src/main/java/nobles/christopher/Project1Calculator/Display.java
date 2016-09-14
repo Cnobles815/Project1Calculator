@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Display {
-
+    Scanner userInput = new Scanner(System.in);
 
     //Prompt the user for input
     //Take user input
     //Display answer
-    AnswerFormat answerFormat = new AnswerFormat();
+
 
     public String setSetting() {
         Scanner userInput = new Scanner(System.in);
@@ -17,39 +17,45 @@ public class Display {
         return userInput.next();
     }
 
-    public int getUserInput1() {
-        Scanner userInput = new Scanner(System.in);
+    public double getUserInput() {
+
         System.out.println("Enter integer.");
         //System.out.println(answerFormat.setOutput());
-        return userInput.nextInt();
+        return userInput.nextDouble();
 
     }
 
+    public char getUserMenuChoice() {
+        //draw
+        System.out.println("[[Main Menu]]");
 
-    public int getUserInput2() {
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter integer.");
-        return userInput.nextInt();
+
+        return userInput.next().toUpperCase().charAt(0);
+    }
+
+    public char getUserStateChoice() {
+
+        //draw A get state  B set state C
+        System.out.println("[[State Menu]]" + "\n \n A: Get State \n B: Set State \n C: Revert State to Zero");
+
+        return userInput.next().toUpperCase().charAt(0);
 
     }
 
-    public String getUserInputOperator() {
-        Scanner userInput = new Scanner(System.in);
+    public char getUserInputOperator() {
+
         System.out.println("I bet you needed to calculate something. This app might do that.");
         System.out.println("It might also return a statement reflecting the current mental answerFormat of the 'coder' who wrote this." +
                 "\nThat is a feature. Not a bug.");
         System.out.println("But you're here to roast my code. So go ahead. Flip that coin.");
         System.out.println("\n                      [[Choose Mode]]" +
-                "\n \nMultiply, Divide " +
-                "\nAdd, Subtract, \nRoot, Square, RaisedTo, " +
-                "\nSine, Cosine, Tangent, " +
-                "\nInvSine, InvCosine, InvTangent" +
-                "\nFeelings, Random " +
-                "\n \n(Type QUIT to mercifully end this tragic program.)");
-        String str = new String (userInput.next());
-        String cased = str.toUpperCase();
-        System.out.println("\n[[" +cased+ "]]");
-        return cased;
+                "\n \n A: Multiply, B: Divide " +
+                "\n C: Add, D: Subtract, \nE: Root, F: Square, G: RaisedTo, " +
+                "\nH: Sine, I: Cosine, J: Tangent, " +
+                "\nK: InvSine, L: InvCosine, M: InvTangent" +
+                //"\nN: Feelings, O: Random " +
+                "\n \n(Type Q to mercifully end this tragic program.)");
+        return userInput.next().toUpperCase().charAt(0);
 
     }
 
@@ -62,8 +68,6 @@ public class Display {
         return cased;
 
     }
-
-
 
     public  int showResultInt(int output) {
 

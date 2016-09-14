@@ -7,331 +7,113 @@ public class Brain {
 
     Display display;
     Calculator calculator;
-    AnswerFormat modeset;
     boolean onOff = true;
+    State state = new State();
 
     public Brain(){
-
         this.display = new Display();
         this.calculator = new Calculator();
 
     }
 
-    public void setMode() {
+    public void mainMenu() {
+        //options list
+        System.out.println(state.getStateValue());
+        char userInput = display.getUserMenuChoice();
+        switch (userInput) {
+            case 'A':
+                mathMenu();
+                break;
+            case 'B':
+                stateMenu();
+                break;
+            case 'Q':
+                System.out.println("You may leave.");
+                return;
+            default:
+                System.out.println("Invalid.");
+                mainMenu();
+                break;
+        }
+    }
 
-        String userInput1 = display.getUserInputOperator();
+
+    public void mathMenu() {
+        char userInput = display.getUserInputOperator();
+        switch (userInput) {
+            case 'C':
+                state.setStateValue(calculator.calculateAdd(state.getStateValue(), display.getUserInput()));
+                break;
+            case 'D':
+                state.setStateValue(calculator.calculateSubtract(state.getStateValue(), display.getUserInput()));
+                break;
+            case 'B':
+                state.setStateValue(calculator.calculateDivide(state.getStateValue(), display.getUserInput()));
+                break;
+            case 'A':
+                state.setStateValue(calculator.calculateMultiply(state.getStateValue(), display.getUserInput()));
+                break;
+            case 'I':
+                state.setStateValue(calculator.calculateCosine(state.getStateValue()));
+                break;
+            case 'H':
+                state.setStateValue(calculator.calculateSine(state.getStateValue()));
+                break;
+            case 'F':
+                state.setStateValue(calculator.calculateSquare(state.getStateValue()));
+                break;
+            case 'E':
+                state.setStateValue(calculator.calculateSquareRoot(state.getStateValue()));
+                break;
+            case 'G':
+                state.setStateValue(calculator.calculateSquareUp(state.getStateValue() , display.getUserInput()));
+                break;
+            case 'L' :
+                state.setStateValue(calculator.calculateInvCoSine(state.getStateValue()));
+                break;
+            case 'J' :
+                state.setStateValue(calculator.calculateTangent(state.getStateValue()));
+                break;
+            case 'M':
+                state.setStateValue(calculator.calculateInvTangent(state.getStateValue()));
+                break;
+            case 'K':
+                state.setStateValue(calculator.calculateInvSine(state.getStateValue()));
+                break;
+            default:
+                System.out.println("Invalid.");
+                break;
+        }
+        mainMenu();
+    }
+
+    public void stateMenu() {
+        char userInput = display.getUserStateChoice();
+        switch (userInput) {
+            case 'A':
+                System.out.println(state.getStateValue());
+                break;
+            case 'B':
+                state.setStateValue(display.getUserInput());
+                break;
+            case 'C':
+                state.setStateValue(0);
+                break;
+            default:
+                System.out.println("Invalid.");
+                stateMenu();
+                break;
+        }
+        mainMenu();
+    }
+
+    public void modeMenu () {
         String userMode = display.getMode();
 
 
-        if (userInput1.equals("ADD")) {
-            //System.out.println(display.getUserInput1() + "+");
-            display.showResultInt(calculator.calculateAdd(display.getUserInput1(), display.getUserInput2()));
-            display.getMode();
-            if (userMode.equals("OCTAL"))
-                modeset.setSettingOct();
-
-
-            if (userMode.equals("HEXIDECIMAL"))
-                modeset.setSettingHex();
-
-
-            if (userMode.equals("BINARY"))
-                modeset.setSettingBin();
-
-
-            if (userMode.equals("DECIMAL"))
-                modeset.setSettingDec();
-
-        }
-
-        if (userInput1.equals("MULTIPLY")) {
-            display.showResultInt(calculator.calculateMultiply(display.getUserInput1() , display.getUserInput2()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-
-
-        if (userInput1.equals("DIVIDE")) {
-            display.showResultInt(calculator.calculateDivide(display.getUserInput1() , display.getUserInput2()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("SUBTRACT")) {
-            display.showResultInt(calculator.calculateSubtract(display.getUserInput1() , display.getUserInput2()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("ROOT")) {
-            display.showResultDouble(calculator.calculateSquareRoot(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-        if (userInput1.equals("SQUARE")) {
-            display.showResultDouble(calculator.calculateSquare(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-        if (userInput1.equals("RANDOM")) {
-            display.showResultRandom(calculator.calculateRandom());
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-        if (userInput1.equals("RAISEDTO")) {
-            display.showResultDouble(calculator.calculateSquareUp(display.getUserInput1() , display.getUserInput2()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("FEELINGS")) {
-            display.showBadResult(calculator.mentalBreakdown());
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("SINE")) {
-            display.showResultDouble(calculator.calculateSine(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("COSINE")) {
-            display.showResultDouble(calculator.calculateCosine(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("TANGENT")) {
-            display.showResultDouble(calculator.calculateTangent(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("INVSINE")) {
-            display.showResultDouble(calculator.calculateInvSine(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("INVCOSINE")) {
-            display.showResultDouble(calculator.calculateInvCoSine(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("INVTANGENT")) {
-            display.showResultDouble(calculator.calculateInvTangent(display.getUserInput1()));
-            display.getMode();
-            if (userMode.equals("OCTAL")) {
-                modeset.setSettingOct();
-            }
-
-            if (userMode.equals("HEXIDECIMAL")) {
-                modeset.setSettingHex();
-            }
-
-            if (userMode.equals("BINARY")) {
-                modeset.setSettingBin();
-            }
-
-            if (userMode.equals("DECIMAL")) {
-                modeset.setSettingDec();
-            }
-        }
-
-        if (userInput1.equals("QUIT")) {
-            this.onOff = false;
-            System.out.println("You may leave, scrub.");
-        }
 
 
     }
-        //else
-            //display.showBadResult(calculator.notAFrickinFunction());
 }
 
 

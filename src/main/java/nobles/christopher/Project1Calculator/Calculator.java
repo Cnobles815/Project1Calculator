@@ -5,10 +5,7 @@ import java.util.Random;
  */
 public class Calculator {
 
-     int sum = 0;
-     int product = 1;
-     int subtract = 0;
-     int divide = 0;
+
 
 
 
@@ -16,33 +13,24 @@ public class Calculator {
     String nonsense = "Bob";
 
 
-    public int calculateAdd (int userNum1, int userNum2) {
+    public double calculateAdd (double userNum1, double userNum2) {
 
-        sum = userNum1 + userNum2;
-
-        return sum;
+       return userNum1 + userNum2;
     }
 
-    public int calculateMultiply (int userNum1, int userNum2) {
+    public double calculateMultiply (double userNum1, double userNum2) {
 
-        product = userNum1 * userNum2;
-
-        return product;
+        return userNum1 * userNum2;
     }
 
-    public int calculateSubtract (int userNum1, int userNum2) {
+    public double calculateSubtract (double userNum1, double userNum2) {
 
-        subtract = userNum1 - userNum2;
-
-        return subtract;
+        return  userNum1 - userNum2;
     }
 
-    public int calculateDivide (int userNum1, int userNum2) {
+    public double calculateDivide (double userNum1, double userNum2) {
 
-        divide = userNum1 / userNum2;
-
-        return divide;
-
+        return userNum1 / userNum2;
     }
 
     public String notAFrickinFunction () {
@@ -51,11 +39,9 @@ public class Calculator {
         return nonsense;
     }
 
-    public double calculateSquareRoot (int userNum1){
+    public double calculateSquareRoot (double userNum1){
 
-        double sRt = Math.sqrt(userNum1);
-
-        return sRt;
+        return Math.sqrt(userNum1);
     }
 
     public String mentalBreakdown () {
@@ -65,18 +51,13 @@ public class Calculator {
         return lol;
     }
 
-    public double calculateSquare (int userNum1) {
-        double sqr = Math.pow( userNum1 , 2);
+    public double calculateSquare (double userNum1) {
 
-        return sqr;
-
+        return Math.pow( userNum1 , 2);
     }
 
-    public double calculateSquareUp (int userNum2, int userNum1) {
-        double sqrU = Math.pow( userNum2, userNum1);
-
-        return sqrU;
-
+    public double calculateSquareUp (double userNum2, double userNum1) {
+        return Math.pow( userNum2, userNum1);
     }
 
     public Random calculateRandom () {
@@ -87,47 +68,35 @@ public class Calculator {
 
     }
 
-    public double calculateSine (int userNum1) {
+    public double calculateSine (double userNum1) {
 
-        double sined = Math.sin(userNum1);
-
-        return sined;
-
+      return Math.sin(userNum1);
     }
 
-    public double calculateCosine (int userNum1) {
+    public double calculateCosine (double userNum1) {
 
-        double coSined = Math.cos(userNum1);
 
-        return coSined;
+      return Math.cos(userNum1);
     }
 
-    public double calculateTangent (int userNum1) {
+    public double calculateTangent (double userNum1) {
 
-        double tanged = Math.tan(userNum1);
-
-        return tanged;
+      return Math.tan(userNum1);
     }
 
-    public double calculateInvSine (int userNum1) {
+    public double calculateInvSine (double userNum1) {
 
-        double invSined = Math.asin(userNum1);
-
-        return invSined;
+      return Math.asin(userNum1);
     }
 
-    public double calculateInvCoSine (int userNum1) {
+    public double calculateInvCoSine (double userNum1) {
 
-        double invCoSined = Math.acos(userNum1);
-
-        return invCoSined;
+       return Math.acos(userNum1);
     }
 
-    public double calculateInvTangent (int userNum1) {
+    public double calculateInvTangent (double userNum1) {
 
-        double invTangent = Math.atan(userNum1);
-
-        return invTangent;
+       return Math.atan(userNum1);
     }
 
 

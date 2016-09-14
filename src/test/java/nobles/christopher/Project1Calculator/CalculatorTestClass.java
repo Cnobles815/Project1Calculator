@@ -97,8 +97,8 @@ public class CalculatorTestClass {
     @Test
     public void calculateAddTEST() {
         //Calculator calculatorTEST = new Calculator();
-        int expectedValue = 10 ;
-        int actualValue = calculatorTEST.calculateAdd(5,5);
+        double expectedValue = 10 ;
+        double actualValue = calculatorTEST.calculateAdd(5,5);
         assertEquals("The value should be 0" , expectedValue, actualValue);
 
 
@@ -108,8 +108,8 @@ public class CalculatorTestClass {
     public void calculateMultiplyTEST() {
         //Calculator calculatorTEST = new Calculator();
 
-        int expectedValue = 25 ;
-        int actualValue = calculatorTEST.calculateMultiply(5,5);
+        double expectedValue = 25 ;
+        double actualValue = calculatorTEST.calculateMultiply(5,5);
         assertEquals("The value should be 10" , expectedValue, actualValue);
 
 
@@ -119,8 +119,8 @@ public class CalculatorTestClass {
     public void calculateSubtractTEST() {
         //Calculator calculatorTEST = new Calculator();
 
-        int actualValue = calculatorTEST.calculateSubtract(6, 5);
-        int expectedValue = 1;
+        double actualValue = calculatorTEST.calculateSubtract(6, 5);
+        double expectedValue = 1;
         assertEquals("The value should be 1" , actualValue, expectedValue);
 
     }
@@ -129,8 +129,8 @@ public class CalculatorTestClass {
     public void calculateDivideTEST() {
         //Calculator calculatorTEST = new Calculator();
 
-        int actualValue = calculatorTEST.calculateDivide(14, 7);
-        int expectedValue = 2;
+        double actualValue = calculatorTEST.calculateDivide(14, 7);
+        double expectedValue = 2;
         assertEquals("The value should be 2" , actualValue, expectedValue);
     }
 
